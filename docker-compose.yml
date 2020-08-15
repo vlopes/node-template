@@ -11,3 +11,17 @@ services:
       - "3000:3000"
     container_name: node-app
     command: npm run dev
+
+  test:
+    build: '.'
+    volumes:
+      - ./:/src/app
+    environment:
+      - DOTENV_PATH=.env.example
+    ports:
+      - "3000:3000"
+    command: npm test
+    links:
+      - node-app
+    depends_on:
+      - node-app

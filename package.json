@@ -4,8 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon app.js"
+    "test": "jest test --env=node",
+    "dev": "nodemon src/app.js"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +14,7 @@
     "express": "4.17.1"
   },
   "devDependencies": {
+    "got": "11.5.2",
     "jest": "26.4.0",
     "nodemon": "2.0.4"
   }

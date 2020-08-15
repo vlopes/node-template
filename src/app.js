@@ -3,7 +3,7 @@ const app = express()
 const port = 3000
 
 app.get('/_health_check', (req, res) => {
-  res.send({message: 'ok'})
+  return res.send({message: 'ok'})
 })
 
 app.listen(port, () => {
