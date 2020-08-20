@@ -10,7 +10,17 @@ services:
     ports:
       - "3000:3000"
     container_name: node-app
+    depends_on:
+      - postgres
+    links:
+      - postgres
     command: npm run dev
+
+  postgres:
+    container_name: postgres
+    image: postgres:11
+    environment:
+      POSTGRES_PASSWORD: test
 
   test:
     build: '.'
